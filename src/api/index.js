@@ -4,6 +4,7 @@ import auth from './auth'
 import passwordReset from './password-reset'
 import article from './article'
 import comments from './comments'
+import destinations from './destinations'
 
 const router = new Router()
 
@@ -35,5 +36,6 @@ router.use('/auth', auth)
 router.use('/password-resets', passwordReset)
 router.use('/articles', article)
 router.use('/comments', comments)
+router.use('/destinations', destinations)
 
 export default router
