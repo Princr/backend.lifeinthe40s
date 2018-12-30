@@ -20,6 +20,12 @@
 	- [Retrieve comments](#retrieve-comments)
 	- [Update comments](#update-comments)
 	
+- [Destinations](#destinations)
+	- [Create destinations](#create-destinations)
+	- [Delete destinations](#delete-destinations)
+	- [Retrieve destinations](#retrieve-destinations)
+	- [Update destinations](#update-destinations)
+	
 - [PasswordReset](#passwordreset)
 	- [Send email](#send-email)
 	- [Submit password](#submit-password)
@@ -191,18 +197,8 @@
 
 
 
-	GET /comments
+	GET /comments/:id
 
-
-### Parameters
-
-| Name    | Type      | Description                          |
-|---------|-----------|--------------------------------------|
-| q			| String			| **optional** <p>Query to search.</p>							|
-| page			| Number			| **optional** <p>Page number.</p>							|
-| limit			| Number			| **optional** <p>Amount of returned items.</p>							|
-| sort			| String[]			| **optional** <p>Order of returned items.</p>							|
-| fields			| String[]			| **optional** <p>Fields to be returned.</p>							|
 
 ## Update comments
 
@@ -220,6 +216,68 @@
 | comment			| 			|  <p>Comments's comment.</p>							|
 | likes			| 			|  <p>Comments's likes.</p>							|
 | dislikes			| 			|  <p>Comments's dislikes.</p>							|
+
+# Destinations
+
+## Create destinations
+
+
+
+	POST /destinations
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>admin access token.</p>							|
+| name			| 			|  <p>Destinations's name.</p>							|
+| location			| 			|  <p>Destinations's location.</p>							|
+| imgUrl			| 			|  <p>Destinations's imgUrl.</p>							|
+| description			| 			|  <p>Destinations's description.</p>							|
+
+## Delete destinations
+
+
+
+	DELETE /destinations/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>admin access token.</p>							|
+
+## Retrieve destinations
+
+
+
+	GET /destinations/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+
+## Update destinations
+
+
+
+	PUT /destinations/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>admin access token.</p>							|
+| name			| 			|  <p>Destinations's name.</p>							|
+| location			| 			|  <p>Destinations's location.</p>							|
+| imgUrl			| 			|  <p>Destinations's imgUrl.</p>							|
+| description			| 			|  <p>Destinations's description.</p>							|
 
 # PasswordReset
 
