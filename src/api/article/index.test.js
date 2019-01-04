@@ -14,13 +14,14 @@ beforeEach(async () => {
 test('POST /articles 201 (master)', async () => {
   const { status, body } = await request(app())
     .post(`${apiRoot}`)
-    .send({ access_token: masterKey, name: 'test', header_content: 'test', content: 'test', imgUrl: 'test' })
+    .send({ access_token: masterKey, name: 'test', header_content: 'test', content: 'test', imgUrl: 'test', likes: 'test' })
   expect(status).toBe(201)
   expect(typeof body).toEqual('object')
   expect(body.name).toEqual('test')
   expect(body.header_content).toEqual('test')
   expect(body.content).toEqual('test')
   expect(body.imgUrl).toEqual('test')
+  expect(body.likes).toEqual('test')
 })
 
 test('POST /articles 401', async () => {
@@ -54,7 +55,7 @@ test('GET /articles/:id 404', async () => {
 test('PUT /articles/:id 200 (master)', async () => {
   const { status, body } = await request(app())
     .put(`${apiRoot}/${article.id}`)
-    .send({ access_token: masterKey, name: 'test', header_content: 'test', content: 'test', imgUrl: 'test' })
+    .send({ access_token: masterKey, name: 'test', header_content: 'test', content: 'test', imgUrl: 'test', likes: 'test' })
   expect(status).toBe(200)
   expect(typeof body).toEqual('object')
   expect(body.id).toEqual(article.id)
@@ -62,6 +63,7 @@ test('PUT /articles/:id 200 (master)', async () => {
   expect(body.header_content).toEqual('test')
   expect(body.content).toEqual('test')
   expect(body.imgUrl).toEqual('test')
+  expect(body.likes).toEqual('test')
 })
 
 test('PUT /articles/:id 401', async () => {
@@ -73,7 +75,7 @@ test('PUT /articles/:id 401', async () => {
 test('PUT /articles/:id 404 (master)', async () => {
   const { status } = await request(app())
     .put(apiRoot + '/123456789098765432123456')
-    .send({ access_token: masterKey, name: 'test', header_content: 'test', content: 'test', imgUrl: 'test' })
+    .send({ access_token: masterKey, name: 'test', header_content: 'test', content: 'test', imgUrl: 'test', likes: 'test' })
   expect(status).toBe(404)
 })
 

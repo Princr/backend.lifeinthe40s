@@ -12,6 +12,9 @@ const articleSchema = new Schema({
   },
   imgUrl: {
     type: String
+  },
+  likes: {
+    type: String
   }
 }, {
   timestamps: true,
@@ -30,6 +33,7 @@ articleSchema.methods = {
       header_content: this.header_content,
       content: this.content,
       imgUrl: this.imgUrl,
+      likes: this.likes,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt
     }

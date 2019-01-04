@@ -3,7 +3,7 @@ import { Article } from '.'
 let article
 
 beforeEach(async () => {
-  article = await Article.create({ name: 'test', header_content: 'test', content: 'test', imgUrl: 'test' })
+  article = await Article.create({ name: 'test', header_content: 'test', content: 'test', imgUrl: 'test', likes: 'test' })
 })
 
 describe('view', () => {
@@ -15,6 +15,7 @@ describe('view', () => {
     expect(view.header_content).toBe(article.header_content)
     expect(view.content).toBe(article.content)
     expect(view.imgUrl).toBe(article.imgUrl)
+    expect(view.likes).toBe(article.likes)
     expect(view.createdAt).toBeTruthy()
     expect(view.updatedAt).toBeTruthy()
   })
@@ -27,6 +28,7 @@ describe('view', () => {
     expect(view.header_content).toBe(article.header_content)
     expect(view.content).toBe(article.content)
     expect(view.imgUrl).toBe(article.imgUrl)
+    expect(view.likes).toBe(article.likes)
     expect(view.createdAt).toBeTruthy()
     expect(view.updatedAt).toBeTruthy()
   })

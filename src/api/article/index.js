@@ -7,7 +7,7 @@ import { schema } from './model'
 export Article, { schema } from './model'
 
 const router = new Router()
-const { name, header_content, content, imgUrl } = schema.tree
+const { name, header_content, content, imgUrl, likes } = schema.tree
 
 /**
  * @api {post} /articles Create article
@@ -19,6 +19,7 @@ const { name, header_content, content, imgUrl } = schema.tree
  * @apiParam header_content Article's header_content.
  * @apiParam content Article's content.
  * @apiParam imgUrl Article's imgUrl.
+ * @apiParam likes Article's imgUrl.
  * @apiSuccess {Object} article Article's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Article not found.
@@ -26,7 +27,7 @@ const { name, header_content, content, imgUrl } = schema.tree
  */
 router.post('/',
   master(),
-  body({ name, header_content, content, imgUrl }),
+  body({ name, header_content, content, imgUrl, likes }),
   create)
 
 /**
@@ -70,7 +71,7 @@ router.get('/:id',
  */
 router.put('/:id',
   master(),
-  body({ name, header_content, content, imgUrl }),
+  body({ name, header_content, content, imgUrl, likes }),
   update)
 
 /**
