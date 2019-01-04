@@ -60,6 +60,7 @@
 | header_content			| 			|  <p>Article's header_content.</p>							|
 | content			| 			|  <p>Article's content.</p>							|
 | imgUrl			| 			|  <p>Article's imgUrl.</p>							|
+| likes			| 			|  <p>Article's imgUrl.</p>							|
 
 ## Delete article
 

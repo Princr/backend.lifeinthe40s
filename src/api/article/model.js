@@ -14,7 +14,7 @@ const articleSchema = new Schema({
     type: String
   },
   likes: {
-    type: String
+    type: Number
   }
 }, {
   timestamps: true,
