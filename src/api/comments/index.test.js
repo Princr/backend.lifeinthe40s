@@ -92,27 +92,27 @@ test('PUT /comments/:id 404 (user)', async () => {
   expect(status).toBe(404)
 })
 
-test('DELETE /comments/:id 204 (user)', async () => {
+test('POST /comments/:id 204 (user)', async () => {
   const { status } = await request(app())
     .delete(`${apiRoot}/${comments.id}`)
     .query({ access_token: userSession })
   expect(status).toBe(204)
 })
 
-test('DELETE /comments/:id 401 (user) - another user', async () => {
+test('POST /comments/:id 401 (user) - another user', async () => {
   const { status } = await request(app())
     .delete(`${apiRoot}/${comments.id}`)
     .send({ access_token: anotherSession })
   expect(status).toBe(401)
 })
 
-test('DELETE /comments/:id 401', async () => {
+test('POST /comments/:id 401', async () => {
   const { status } = await request(app())
     .delete(`${apiRoot}/${comments.id}`)
   expect(status).toBe(401)
 })
 
-test('DELETE /comments/:id 404 (user)', async () => {
+test('POST /comments/:id 404 (user)', async () => {
   const { status } = await request(app())
     .delete(apiRoot + '/123456789098765432123456')
     .query({ access_token: anotherSession })

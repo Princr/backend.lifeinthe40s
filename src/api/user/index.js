@@ -104,7 +104,7 @@ router.put('/:id/password',
   updatePassword)
 
 /**
- * @api {delete} /users/:id Delete user
+ * @api {post} /users/:id Delete user
  * @apiName DeleteUser
  * @apiGroup User
  * @apiPermission admin
@@ -113,7 +113,7 @@ router.put('/:id/password',
  * @apiError 401 Admin access only.
  * @apiError 404 User not found.
  */
-router.delete('/:id',
+router.post('/:id',
   token({ required: true, roles: ['admin'] }),
   destroy)
 

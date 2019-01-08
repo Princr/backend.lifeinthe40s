@@ -74,7 +74,7 @@ router.put('/:id',
   update)
 
 /**
- * @api {delete} /comments/:id Delete comments
+ * @api {post} /comments/:id Delete comments
  * @apiName DeleteComments
  * @apiGroup Comments
  * @apiPermission user
@@ -83,7 +83,7 @@ router.put('/:id',
  * @apiError 404 Comments not found.
  * @apiError 401 user access only.
  */
-router.delete('/:id',
+router.post('/:id',
   token({ required: true }),
   destroy)
 
