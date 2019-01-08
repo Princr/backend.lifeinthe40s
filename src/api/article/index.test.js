@@ -79,20 +79,20 @@ test('PUT /articles/:id 404 (master)', async () => {
   expect(status).toBe(404)
 })
 
-test('DELETE /articles/:id 204 (master)', async () => {
+test('POST /articles/:id 204 (master)', async () => {
   const { status } = await request(app())
     .delete(`${apiRoot}/${article.id}`)
     .query({ access_token: masterKey })
   expect(status).toBe(204)
 })
 
-test('DELETE /articles/:id 401', async () => {
+test('POST /articles/:id 401', async () => {
   const { status } = await request(app())
     .delete(`${apiRoot}/${article.id}`)
   expect(status).toBe(401)
 })
 
-test('DELETE /articles/:id 404 (master)', async () => {
+test('POST /articles/:id 404 (master)', async () => {
   const { status } = await request(app())
     .delete(apiRoot + '/123456789098765432123456')
     .query({ access_token: masterKey })
