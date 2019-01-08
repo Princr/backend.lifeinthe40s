@@ -10,7 +10,7 @@ const router = new Router()
 const { name, header_content, content, imgUrl, likes } = schema.tree
 
 /**
- * @api {post} /articles Create article
+ * @api {post} /articles Create articleb
  * @apiName CreateArticle
  * @apiGroup Article
  * @apiPermission master
@@ -84,7 +84,7 @@ router.put('/:id',
  * @apiError 404 Article not found.
  * @apiError 401 master access only.
  */
-router.post('/:id',
+router.post('/',
   master(),
   destroy)
 

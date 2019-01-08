@@ -33,8 +33,8 @@ export const update = ({ bodymen: { body }, params }, res, next) =>
     .then(success(res))
     .catch(next)
 
-export const destroy = ({ params }, res, next) =>
-  Article.findById(params.id)
+export const destroy = ({ bodymen: { body } }, res, next) =>
+  Article.findById(body)
     .then(notFound(res))
     .then((article) => article ? article.remove() : null)
     .then(success(res, 204))
