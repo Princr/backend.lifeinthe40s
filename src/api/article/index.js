@@ -84,7 +84,7 @@ router.put('/:id',
  * @apiError 404 Article not found.
  * @apiError 401 master access only.
  */
-router.delete('/:id',
+router.post('/:id',
   master(),
   destroy)
 
