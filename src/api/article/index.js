@@ -75,7 +75,7 @@ router.put('/:id',
   update)
 
 /**
- * @api {delete} /articles/:id Delete article
+ * @api {post} /articles/:id Delete article
  * @apiName DeleteArticle
  * @apiGroup Article
  * @apiPermission master
