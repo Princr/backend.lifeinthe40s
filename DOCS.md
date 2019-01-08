@@ -66,7 +66,7 @@
 
 
 
-	DELETE /articles/:id
+	POST /articles/:id
 
 
 ### Parameters
