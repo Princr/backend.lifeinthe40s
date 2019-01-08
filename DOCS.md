@@ -185,7 +185,7 @@
 
 
 
-	DELETE /comments/:id
+	POST /comments/:id
 
 
 ### Parameters
@@ -340,7 +340,7 @@
 
 
 
-	DELETE /users/:id
+	POST /users/:id
 
 
 ### Parameters
